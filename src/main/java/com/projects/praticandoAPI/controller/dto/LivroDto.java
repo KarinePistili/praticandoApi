@@ -1,4 +1,5 @@
 package com.projects.praticandoAPI.controller.dto;
+import com.projects.praticandoAPI.modelo.Livro;
 import com.projects.praticandoAPI.modelo.Topico;
 
 
@@ -17,7 +18,7 @@ public class LivroDto {
     public LivroDto(Livro livro) {
         this.id = livro.getId();
         this.titulo = livro.getTitulo();
-        this.descricao = livro.getMensagem();
+        this.descricao = livro.getDescricao();
     }
 
     public Long getId() {

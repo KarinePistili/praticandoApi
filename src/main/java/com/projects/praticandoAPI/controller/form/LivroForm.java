@@ -1,8 +1,12 @@
 package com.projects.praticandoAPI.controller.form;
 
+import java.util.List;
+
 import com.projects.praticandoAPI.modelo.Curso;
+import com.projects.praticandoAPI.modelo.Livro;
 import com.projects.praticandoAPI.modelo.Topico;
 import com.projects.praticandoAPI.repository.CursoRepository;
+import com.projects.praticandoAPI.repository.LivroRepository;
 
 public class LivroForm {
 
@@ -18,7 +22,7 @@ public class LivroForm {
     }
 
     public String getDescricao() {
-        return mensagem;
+        return descricao;
     }
 
     public void setDescricao(String descricao) {
@@ -26,11 +30,16 @@ public class LivroForm {
     }
 
     public String getNomeLivro() {
-        return nomeLivro;
+        return titulo;
     }
 
     public void setNomeLivro(String nomeLivro) {
-        this.nomeLivro = nomeLivro;
+        this.titulo = nomeLivro;
     }
+    
+    public Livro converter(LivroRepository livroRepository) {
+		List<Livro> livro = livroRepository.findByLivroNome(titulo);
+		return new Livro(titulo, descricao);
+	}
 
 }

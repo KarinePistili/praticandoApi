@@ -1,19 +1,10 @@
 package com.projects.praticandoAPI.modelo;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Livro {
@@ -28,7 +19,7 @@ public class Livro {
     public Livro() {
     }
 
-    public Topico(String titulo, String descricao) {
+	public Livro(String titulo, String descricao) {
         this.titulo = titulo;
         this.descricao = descricao;
     }
