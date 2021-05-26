@@ -38,7 +38,6 @@ public class LivroForm {
     }
     
     public Livro converter(LivroRepository livroRepository) {
-		List<Livro> livro = livroRepository.findByLivroNome(titulo);
 		return new Livro(titulo, descricao);
 	}
 

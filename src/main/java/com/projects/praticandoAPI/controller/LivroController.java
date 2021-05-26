@@ -1,7 +1,7 @@
 package com.projects.praticandoAPI.controller;
 
 import java.net.URI;
-
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,10 @@ public class LivroController {
             List<Livro> livros = livroRepository.findAll();
             return LivroDto.converter(livros);
         } else {
-            List<Livro> livros = livroRepository.findByLivroNome(nomeLivro);
+            Livro livro = livroRepository.findByTitulo(nomeLivro);
+            List<Livro> livros = new ArrayList<Livro>();
+            livros.add(livro);
+            
             return LivroDto.converter(livros);
         }
     }

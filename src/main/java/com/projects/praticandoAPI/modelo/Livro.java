@@ -13,12 +13,11 @@ public class Livro {
     private Long id;
     private String titulo;
     private String descricao;
-    @ManyToOne
-    private Livro livro;
 
     public Livro() {
+    	
     }
-
+    
 	public Livro(String titulo, String descricao) {
         this.titulo = titulo;
         this.descricao = descricao;
@@ -72,5 +71,5 @@ public class Livro {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
+    
 }
